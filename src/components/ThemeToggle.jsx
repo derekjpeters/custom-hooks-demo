@@ -2,6 +2,7 @@ import useLocalStorage from "../hooks/useLocalStorage";
 import { useEffect } from "react";
 
 export default function ThemeToggle ({ onTitleChange }) {
+    console.log("ThemeToggle component rendering");
     const [theme, setTheme, isHydrated] = useLocalStorage("theme", "light");
 
     useEffect(() => {
