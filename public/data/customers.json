@@ -1,0 +1,14 @@
+{
+  "customers": [
+    { "name": "Alex Johnson", "account": "Northwind Inc.", "status": "Active" },
+    { "name": "Taylor Smith", "account": "Acme Corp.", "status": "At Risk" },
+    { "name": "Jordan Lee", "account": "GlobalTech", "status": "Active" },
+    { "name": "Casey Brown", "account": "Summit Systems", "status": "Churned" },
+    { "name": "Morgan Davis", "account": "BrightWave", "status": "Active" },
+    { "name": "Riley Adams", "account": "Evergreen Co.", "status": "At Risk" },
+    { "name": "Jamie Clark", "account": "BluePeak", "status": "Active" },
+    { "name": "Drew Taylor", "account": "NextGen Solutions", "status": "Active" },
+    { "name": "Sam Green", "account": "Visionary Labs", "status": "Churned" },
+    { "name": "Cameron White", "account": "InnovaWorks", "status": "Active" }
+  ]
+}
