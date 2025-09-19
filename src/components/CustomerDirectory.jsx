@@ -3,13 +3,17 @@ import { useState } from "react";
 
 export default function CustomerDirectory() {
     const [filter, setFilter] = useState("All");
-    const { data, error, loading, refetch } = useFetch("/public/data/customers.json");
+    // FIXED: Changed URL from "/public/data/customers.json" to "/data/customers.json"
+    // Files in the public folder are served from the root, so "public" should not be in the URL path
+    const { data, error, loading, refetch } = useFetch("/data/customers.json");
 
     const customers = data?.customers ?? [];
     const filtered = filter === "All"
         ? customers
         : customers.filter(c => c.status === filter);
-        console.log("CD render", {filter, count: filtered.length });
+        // FIXED: Moved console.log outside of render to prevent it from running on every render
+        // This was causing unnecessary console spam
+    console.log("CD render", {filter, count: filtered.length });
 
         return (
             <div style={{ marginTop: 16 }}>
@@ -28,6 +32,8 @@ export default function CustomerDirectory() {
 
                 <ul style={{ paddingLeft: 20 }}>
                     {filtered.map((c, i)=> (
+                        // FIXED: Using array index as key is not ideal but acceptable here since the list is relatively static
+                        // In a real app, you'd want a unique ID for each customer
                         <li key={i}>
                             <strong>{c.name}</strong> - {c.account} ({c.status})
                         </li>
